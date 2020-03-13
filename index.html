@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CodePen - 2025-4</title>
+<style>
+body{
+  background-image:url("https://media1.tenor.com/images/6310c9d32a386479d17b6f8d5c54eec4/tenor.gif?itemid=14025651")
+}
+
+ol{
+  background:lightblue;
+}
+
+.correct{
+  background:green;
+}
+
+.incorrect{
+  background:red;
+}
+</style>
+</head>
+<body translate="no">
+<h1>Quiz Questions</h1>
+<ol>
+<li>2 + 2<input data-correct="4"></li>
+<li>2 + 3<input data-correct="5"></li>
+<li>2<sup>3</sup> <input data-correct="8"></li>
+<li>log<sub>e</sub>e<sup>8</sup> <input data-correct="8"></li>
+<li>What is the capital of France?<input data-correct="Paris"></li>
+<li>What year was the treaty of Versailes signed?<input data-correct="1919"></li>
+<li>What website is this made with?<input data-correct="codepen.io"></li>
+</ol>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script id="rendered-js">
+console.clear();
+console.log("hello universe!")
+
+$("input").change(onChange);
+
+function onChange(evt){
+  
+ let correct= $(this).data("correct");
+  let response = $(this).val();
+  console.log(correct,response)
+  if(correct == response){
+    console.log("answer correct")
+    $(this).removeClass("incorrect").addClass("correct");
+  } else{
+    console.log("answer incorrect");
+     $(this).removeClass("correct").addClass("incorrect");
+
+  }
+  
+}
+    </script>
+</body>
+</html>
